@@ -174,7 +174,7 @@ static inline int64_t get_ts_tval(struct timeval *tv)
 #define VBOXGUEST_IOCTL_FLAG     0
 #define VBOXGUEST_IOCTL_CODE_(Function, Size)  _IOC(_IOC_READ|_IOC_WRITE, 'V', (Function), (Size))
 #define VBOXGUEST_IOCTL_CODE(Function, Size)   VBOXGUEST_IOCTL_CODE_((Function) | VBOXGUEST_IOCTL_FLAG, Size)
-#define VBOXGUEST_IOCTL_VMMREQUEST(Size)       VBOXGUEST_IOCTL_CODE(3, (Size))
+#define VBOXGUEST_IOCTL_VMMREQUEST(Size)       VBOXGUEST_IOCTL_CODE(2, (Size))
 
 #pragma pack(4)
 /** generic VMMDev request header */
