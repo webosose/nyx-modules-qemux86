@@ -1,4 +1,4 @@
-// Copyright (c) 2010-2018 LG Electronics, Inc.
+// Copyright (c) 2010-2021 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -611,6 +611,8 @@ static void handle_new_event(input_event_t *event)
 		syn_event.type = EV_SYN;
 		syn_event.code = SYN_START;
 		syn_event.value = 0;
+		syn_event.time.tv_sec = 0;
+		syn_event.time.tv_usec = 0;
 
 		memcpy(&touchpanel_event_list.input[1], &syn_event, sizeof(input_event_t));
 
