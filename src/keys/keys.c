@@ -1,4 +1,4 @@
-// Copyright (c) 2010-2018 LG Electronics, Inc.
+// Copyright (c) 2010-2023 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <assert.h>
 
 #include <nyx/nyx_module.h>
 #include <nyx/module/nyx_utils.h>
@@ -383,6 +384,7 @@ nyx_error_t keys_get_event(nyx_device_t *d, nyx_event_t **e)
 		 * let's allocate new event and hold it here.
 		 */
 		keys_device->current_event_ptr = keys_event_create();
+		assert(NULL != keys_device->current_event_ptr);
 	}
 
 	for (; event_iter < event_count;)
