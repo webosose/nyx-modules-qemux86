@@ -1,4 +1,4 @@
-// Copyright (c) 2010-2021 LG Electronics, Inc.
+// Copyright (c) 2010-2024 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -297,7 +297,7 @@ static void init_vbox_touchpanel(void)
 		nyx_error(MSGID_NYX_QMUX_TP_SETPTR_ERR, 0,"ERROR: vboxguest SetPointerShape failed: %d", mpReq.header.rc);
 		goto error;
 	}
-
+	close(vbox_fd);
 	return;
 error:
 
